@@ -1,0 +1,28 @@
+{
+    "name": "Robux Element Changer",
+    "description": "DISCLAIMER, THIS DOES NOT GIVE OR TAKE YOUR ROBUX!\n\nChange your robux display amount.",
+    "version": "1.1",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "extension.html",
+        "default_icon": "images/icon-32.png"
+    },
+    "permissions": ["storage"],
+    "icons": {
+        "16": "images/icon-16.png",
+        "32": "images/icon-32.png",
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/change.js"
+            ],
+            "matches": [
+                "https://www.roblox.com/*",
+                "https://web.roblox.com/*"
+            ]
+        }
+    ]
+}
