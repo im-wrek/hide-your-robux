@@ -1,7 +1,7 @@
 {
     "name": "Robux Element Changer",
-    "description": "DISCLAIMER, THIS DOES NOT GIVE OR TAKE YOUR ROBUX!\n\nChange your robux display amount.",
-    "version": "1.1",
+    "description": "",
+    "version": "1.2",
     "manifest_version": 3,
     "action": {
         "default_popup": "extension.html",

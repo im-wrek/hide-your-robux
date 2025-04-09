@@ -1,6 +1,8 @@
 let creditBalance = 0;
 let robuxBalance = 0;
 
+chrome.storage.local.set({fakeRobux: null, hideRobux: true, hideWallet: false, fakeWallet: null})
+
 fetch('https://apis.roblox.com/credit-balance/v1/get-credit-balance-for-navigation', {
     method: 'GET',
     credentials: 'include',
@@ -146,7 +148,7 @@ function updateRobux() {
 
     waitForElement('#nav-robux-amount.rbx-text-navbar-right.text-header', (element) => {
         let html = ""
-        if (hideRobux) {
+        if (hideRobux === true) {
             html = ("-").repeat(formatRobux(robuxBalance, true).length);
         } else if (fakeRobux) {
             html = fakeRobux
@@ -157,7 +159,7 @@ function updateRobux() {
     });
     waitForElement('#nav-robux-balance', (element) => {
         let html = ""
-        if (hideRobux) {
+        if (hideRobux === true) {
             html = ("-").repeat(formatRobux(robuxBalance, true).length);
         } else if (fakeRobux) {
             html = fakeRobux
